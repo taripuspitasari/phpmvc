@@ -1,0 +1,24 @@
+Dalam folder mvc dibuat 2 folder
+1. Folder public => digunakan untuk menyimpan file file yang dapat diakses oleh user, alamat utama mvc adalah folder public bukan folder app. Di dalamnya terdapat file index, css, js dan gambar. Lalu agar lebih rapih buat subfolder seperti 
+        1. subfolder css
+        2. subfolder js
+        3. subfolder gambar
+        4. index.php => file utama yang akan diakses oleh user
+        5. .htaccess => konfigurasi server (blok semua akses ke dalam folder app ini kecuali file index)
+2. Folder app => digunakan untuk menyimpan file utama dari aplikasi mvc (inti mvc). Di dalamnya terdapat subfolder seperti:
+        1. subfolder core => mengelola routing
+            1. App.php
+            2. Controller.php
+        2. subfolder controllers => kelas-kelas extends dari Controller.php
+        3. subfolder views => berisi antarmuka yang disajikan oleh controllers
+        4. subfolder models => 
+        5. init.php
+        4. .htaccess => konfigurasi server (blok semua akses ke dalam folder app ini kecuali file index)
+
+Flow dalam app mvc
+1. public/index.php => memanggil app mvc dengan memanggil file dalam app/init.php (bootstraping = memanggil satu file kemudian file tersebut akan memamggil keseluruhan file mvcnya)
+
+2. app/init.php => memanggil file core/App.php && file core/Controller.php yang berisi kelas-kelas utama yang membentuk mvc
+
+3. dalam file public/index.php buat variable 
+    $app = new App(); => menjalankan kelas App
